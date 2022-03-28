@@ -4,7 +4,7 @@ node('master')
   {
       try
       {
-          git 'https://github.com/krishnain/mymaven.git'
+          git 'https://github.com/Ewambe/Jenkins.git'
       }
       catch(Exception e1)
       {
