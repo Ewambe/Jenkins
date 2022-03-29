@@ -1,6 +1,6 @@
 node('master') 
 {
-  stage('ContinousDownload')
+  stage('ContinousDownload_test')
   {
       try
       {
@@ -12,7 +12,7 @@ node('master')
           exit(1)
       }
   }
-  stage('ContinousBuild')
+  stage('ContinousBuild_test')
   {
       try
       {
@@ -24,7 +24,7 @@ node('master')
           exit(1)
       }
   }
-   stage('ContinousDeployment')
+   stage('ContinousDeployment_test')
   {
       try
       {
@@ -36,7 +36,7 @@ node('master')
           exit(1)
       }
   } 
-   stage('ContinousTesting')
+   stage('ContinousTesting_test')
   {
       try
       {
@@ -49,16 +49,4 @@ node('master')
           exit(1)
       }
   } 
-   stage('ContinousDelivery')
-  {
-      try
-      {
-          deploy adapters: [tomcat9(credentialsId: '2357967a-6703-423f-87f7-30a1ec349d35', path: '', url: 'http://172.31.11.156:8080')], contextPath: 'prodapp', war: '**/*.war'
-      }
-      catch(Exception e5)
-      {
-          mail bcc: '', body: 'failed to deploy to prod server', cc: '', from: '', replyTo: '', subject: 'please fix', to: 'ewambe5@gmail.com'
-          exit(1)
-      }
-  } 
-}
+  }
