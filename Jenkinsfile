@@ -4,7 +4,7 @@ node('master')
   {
       try
       {
-          git 'https://github.com/Ewambe/Jenkins.git'
+          git 'https://github.com/derickfelix/BankApplication.git'
       }
       catch(Exception e1)
       {
