@@ -4,7 +4,7 @@ node('master')
   {
       try
       {
-          git 'https://github.com/derickfelix/BankApplication.git'
+          git 'https://github.com/krishnain/maven.git'
       }
       catch(Exception e1)
       {
